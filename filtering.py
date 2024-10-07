@@ -7,24 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1ML9EN-XUsSTqcz8A7PgFjo1V3LN1O2Et
 
 # ver 1
-<!-- Please modify the script to add two extra columns in the output table. The first column is "Status", and the second column is "Check Type".For "Status" column, fill the column with three options "OKAY", "BAD", and "CHECK".
-
-If "PTM Type" and "Amino Acid and Site" each contains only one result, and the format of the result from "Amino Acid and Site" is "([A-a-z]+-[0-9]+)", and the PTM type correctly matches with the amino acid (
-“Glycosylation Ser”
-“Phosphorylation Ser”
-“Phosphorylation Thr”
-“Phosphorylation Tyr”
-“Ubiquitination Lys”
-“Acetylation Lys”
-“Methylation Lys”
-“Sumoylation Lys”
-“Methylation Arg”
-), mark the "Status" column as "OKAY" and leave "N/A" for "Check Type" column;
-
-If the result from "Amino Acid and Site" is not "([A-a-z]+-[0-9]+)" OR the full name of an amino acid, mark the "Status" as "BAD" and leave "N/A" for "Check Type" column;
-
-If 1) "PTM Type" has multiple results, OR 2) "Amino Acid and Site" has multiple results, OR 3) the "Amino Acid and Site" only has the full name of an amino acid without site information ("-[0-9]+"), OR 4) the PTM type incorrectly matches with the amino acid (refer to the list earlier), OR 5) all other rows that are not "OKAY" or "BAD", mark "Status" as "CHECK", and assign "CHECK TYPE" as "Multi Types", "Multi AA and Sites", "No Site", "Not Matching", and "Other" accordingly. -->
-"""
 
 import csv
 import re
@@ -214,9 +196,7 @@ write_to_csv(ptm_data, output_file)
 
 print(f"PTM summary has been written to {output_file}")
 
-"""# ver 2
-<!-- Modify the script to 1) add an additional condition for "CHECK": If "Source" is not PTM, mark "Status" as "CHECK", and assign "CHECK TYPE" as "Source". 2) capture rows where "Amino Acid and Site" is not "[A-a-z]+-[0-9]+ (one capital letter and two lower letters, three letters total with a dash and a number)" OR the full name of an amino acid, mark the "Status" as "BAD" and leave "N/A" for "Check Type" column. -->
-"""
+# ver 2
 
 import csv
 import re
